@@ -3,13 +3,17 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-12">
-			<h1>Home</h1>		
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1>Address book</h1>
+			<h2>Your contacts:</h2>		
+			@if(count($people) > 0)
+				@foreach($people as $person)
+					<ul style="margin-bottom: 15px" class="list-group">
+						<li " class="list-group-item"> Name: <a href="/detailedperson/{{$person->id}}">{{$person->name}}</a></li>
+						<li class="list-group-item"> Address: {{$person->address}} </li>
+						<li class="list-group-item"> Primary number: {{$person->number}} </li>
+					</ul>
+				@endforeach
+			@endif
 		</div>
 	</div>
 @endsection

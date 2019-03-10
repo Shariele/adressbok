@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-	<h1>Add person</h1>
+	<h1>Add Person</h1>
+	<div class="row">
+		<div class="col-md-6">
+			@include('inc.messages')
+		</div>
+	</div>
 
-	@include('inc.messages')
 	{!! Form::open(['url' => 'addPerson/submitNewPerson']) !!}
 		<div class="form-group">
 			<div class="row">

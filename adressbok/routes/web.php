@@ -10,13 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'PersonController@getPeople');
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/detailedperson/{id}', 'PersonController@show');
+Route::get('/editperson/{id}', 'PersonController@edit');
 
-Route::get('/addperson', function () {
-    return view('addPerson');
-});
-
+Route::get('/addperson', 'PagesController@getAddPerson');
 Route::post('/addPerson/submitNewPerson', 'PersonController@submitNewPerson');

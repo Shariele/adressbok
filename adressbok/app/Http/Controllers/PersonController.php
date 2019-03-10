@@ -23,6 +23,23 @@ class PersonController extends Controller
     	// Save to db
     	$person->save();
 
-    	return redirect('/');
+    	return redirect('/addperson')->with('success', 'Person Created');
+    }
+
+    // Get all people in address book
+    public function getPeople(){
+    	$people = Person::all();
+
+    	return view('/home')->with('people', $people);
+    }
+
+    public function show($id){
+    	$person = Person::find($id);
+
+    	return view('/detailedPerson')->with('person', $person);
+    }
+
+    public function removePerson(){
+
     }
 }
