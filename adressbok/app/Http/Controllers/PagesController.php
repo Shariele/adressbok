@@ -15,6 +15,10 @@ class PagesController extends Controller
     }
 
     public function getDetailedPerson(){
-    	return view('detailedperson');
+    	return view('detailedPerson');
+    }
+
+    public function getEditPerson(){
+    	return view('editPerson');
     }
 }

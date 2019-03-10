@@ -13,7 +13,10 @@
 Route::get('/', 'PersonController@getPeople');
 
 Route::get('/detailedperson/{id}', 'PersonController@show');
-Route::get('/editperson/{id}', 'PersonController@edit');
+Route::get('/editperson/{id}', 'PersonController@editPerson');
 
 Route::get('/addperson', 'PagesController@getAddPerson');
+
+Route::post('/detailedPerson/deletePerson', 'PersonController@deletePerson');
+Route::post('/detailedPerson/submitEditedPerson', 'PersonController@submitEditedPerson');
 Route::post('/addPerson/submitNewPerson', 'PersonController@submitNewPerson');

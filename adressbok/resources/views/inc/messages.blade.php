@@ -11,3 +11,15 @@
 		{{session('success')}}
 	</div>
 @endif
+
+@if(session('successfulEdit'))
+	<div class="alert alert-success">
+		{{session('successfulEdit')}}
+	</div>
+@endif
+
+@if(session('successfulDelete'))
+	<div class="alert alert-success">
+		{{session('successfulDelete')}}
+	</div>
+@endif

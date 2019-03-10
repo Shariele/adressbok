@@ -4,7 +4,12 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1>Address book</h1>
-			<h2>Your contacts:</h2>		
+			<h2>Your contacts:</h2>	
+			<div class="row">
+				<div class="col-md-12">
+					@include('inc.messages')
+				</div>
+			</div>	
 			@if(count($people) > 0)
 				@foreach($people as $person)
 					<ul style="margin-bottom: 15px" class="list-group">
